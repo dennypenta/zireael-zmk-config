@@ -28,13 +28,13 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// | TAB     |  Q      |  W     |   E   |  R    |    T    |   |  Y  |  U    |  I    |  O     |  P      | BACKSPACE |
-// | SHFT    | A>SHIFT | S>CTRL | D>ALT | F>CMD |    G    |   |  H  | J>CMD | K>ALT | L>CTRL | ;>SHIFT |  QUOTE    |
-// | CTRL    |  Z      |  X     |  C    |  V    |    B    |   |  N  |  M    |  ,    |  .     |  /      | ESC       |
+// | TAB>HYPER |  Q      |  W     |   E   |  R    |    T    |   |  Y  |  U    |  I    |  O     |  P      | BACKSPACE |
+// | SHFT      | A       | S      | D     | F     |    G    |   |  H  | J     | K     | L      | ;       |  QUOTE    |
+// | CTRL      |  Z      |  X     |  C    |  V    |    B    |   |  N  |  M    |  ,    |  .     |  /      | ESC       |
 //                    | CMD | LAYER 1 | SPACE |       | ENTER | LAYER 2  | ALT |
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LSHFT       &mt LSHFT A &mt LCTRL S &mt LALT D &mt LGUI F &kp G   &kp H &mt LGUI J  &mt LALT K     &mt LCTRL L   &mt LSHFT SEMI &kp SQT
+   &tp LC(LS(LA(LGUI))) TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
+   &kp LSHFT       &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
    &kp LCTRL       &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
                &kp LGUI &mo 1 &kp SPACE        &kp RET &mo 2 &kp LALT
                         >;
@@ -62,8 +62,8 @@
 //                    |     |     |    |                  |     | LFT | DWN | RGT |     |     |
                         bindings = <
    &trans     &kp F1        &kp F2       &kp F3       &kp F4       &kp F5          &kp F6   &kp F7   &kp F8 &kp F9    &kp F10 &trans
-   &trans     &kp C_PREV    &kp C_NEXT   &kp C_VOL_DN &kp C_VOL_UP &kp C_PP        &trans     &kp UP  &trans &trans &trans &trans
-   &trans &trans  &trans &kp C_MUTE &trans &trans    &kp LEFT   &kp DOWN   &kp RIGHT &trans    &trans &trans
+   &trans     &kp C_PREV    &kp C_NEXT   &kp C_VOL_DN &kp C_VOL_UP &kp C_PP        &trans   &trans   &kp UP &trans &trans &trans
+   &trans &trans  &trans &kp C_MUTE &trans &trans     &trans &kp LEFT   &kp DOWN   &kp RIGHT    &trans &trans
                           	                        &trans   &trans   &trans       &trans   &trans   &trans
                         >;
                 };
