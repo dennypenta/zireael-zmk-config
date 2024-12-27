@@ -28,24 +28,24 @@
 
                 default_layer {
 // -----------------------------------------------------------------------------------------
-// | TAB  |  Q  |  W  |  E  |  R  |    T    |   |  Y  |  U   |  I  |  O  |  P  | ESC |
-// | CTRL |  A  |  S  |  D  |  F  |    G    |   |  H  |  J   |  K  |  L  |  ;  |  LWR/'   |
-// | SHFT |  Z  |  X  |  C  |  V  |    B    |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
-//                    | GUI | LWR | ENT |       |     SPC | BKSP  | RSE |
+// | TAB>HYP |  Q      |  W     |   E   |  R    |    T    |   |  Y  |  U    |  I    |  O     |  P      | BACKSPACE |
+// | SHFT    | A>SHIFT | S>CTRL | D>ALT | F>CMD |    G    |   |  H  | J>CMD | K>ALT | L>CTRL | ;>SHIFT |  QUOTE    |
+// | CTRL    |  Z      |  X     |  C    |  V    |    B    |   |  N  |  M    |  ,    |  .     |  /      | ESC       |
+//                    | CMD | LAYER 1 | SPACE |       | ENTER | LAYER 2  | ALT |
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LSHFT &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &lt 1 SQT
-   &kp LCTRL &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
+   &mt LC(LS(LALT(LGUI))) TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
+   &kp LSHFT       &mt LS A &mt LC S &mt LALT D &mt LGUI F &kp G   &kp H &mt LGUI J  &mt LALT K     &mt LC L   &mt LS SEMI &kp SQT
+   &kp LCTRL       &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
                &kp LGUI &mo 1 &kp SPACE        &kp RET &mo 2 &kp LALT
                         >;
                 };
 
                 layer_below {
 // -----------------------------------------------------------------------------------------
-// |      |  !  |  @  |  #  |  $  |    %     |   |  ^  |  &  |  *  |  (  |  )  |   \   |
-// |      |  1  |  2  |  3  |  4  |    5     |   |  -  |  =  |  `  |  {  |  }  |  "|"  |
-// | SHFT |  6  |  7  |  8  |  9  |    0     |   |  _  |  +  |  ~  |  [  |  ]  | RSHFT |
-//                     | GUI |     | ALT/ENT |   | HYPER/SPACE | BKSP |    |
+// | TAB  |  !  |  @  |  #  |  $  |    %     |   |  ^  |  &  |  *  |  (  |  )  |   \   |
+// | SHFT |  1  |  2  |  3  |  4  |    5     |   |  -  |  =  |  `  |  {  |  }  |  "|"  |
+// | CTRL |  6  |  7  |  8  |  9  |    0     |   |  _  |  +  |  ~  |  [  |  ]  | ESC |
+//                     | CMD | LAYER 1 | SPACE |   | ENTER | LAYER 2 | ALT |
                         bindings = <
    &trans    &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET  &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSLH
    &trans    &kp N1   &kp N2 &kp N3   &kp N4   &kp N5      &kp MINUS  &kp EQUAL &kp GRAVE       &kp LBRC &kp RBRC &kp PIPE
@@ -56,10 +56,10 @@
 
                 layer_above {
 // -----------------------------------------------------------------------------------------
-// |       |  F1  |  F2  |  F3  |  F4  |  F5 |            |  F6  |  F7  |  F8  |  F9  |  F10  |   |
-// |       | Prev | Next | Vol - | Vol + | Play/Pause |   |      | LFT | DWN |  UP | RGT |     |     |
-// | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |   |            |     |     |     |     |     |     |
-//                    |     |     |    |                  |     |     |     |
+// |       |  F1  |  F2  |  F3  |  F4  |  F5 |            |  F6 |  F7 |  F8 |  F9 | F10 |   |
+// |       | Prev | Next | Vol - | Vol + | Play/Pause |   |     |     |     |     |     |     |     |
+// | BTCLR | BT1 | BT2 | MUTE | BT4 | BT5 |   |           |     |     | UP  |     |     |     |
+//                    |     |     |    |                  |     | LFT | DWN | RGT |     |     |
                         bindings = <
    &trans     &kp F1        &kp F2       &kp F3       &kp F4       &kp F5          &kp F6   &kp F7   &kp F8 &kp F9    &kp F10 &trans
    &trans     &kp C_PREV    &kp C_NEXT   &kp C_VOL_DN &kp C_VOL_UP &kp C_PP        &trans     &kp UP  &trans &trans &trans &trans
@@ -70,8 +70,8 @@
 
                 layer_adjust {
 // -----------------------------------------------------------------------------------------
-// |       |  F1  |  F2  |  F3  |  F4  |  F5 |            |  F6  |  F7  |  F8  |  F9  |  F10  |   |
-// |       | Prev | Next | Vol - | Vol + | Play/Pause |   |      | LFT | DWN |  UP | RGT |     |     |
+// |       |      |      |     |     |    |            |     |     |     |     |     |   |
+// |       |     |     |      |   |  e |   |      |     |     |     |     |     |     |
 // | BTCLR | BT1 | BT2 | BT3 | BT4 | BT5 |   |            |     |     |     |     |     |     |
 //                    |     |     |    |                  |     |     |     |
                         bindings = <
